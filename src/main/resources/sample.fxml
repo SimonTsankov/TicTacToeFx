@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="anchorPane" maxHeight="800.0" maxWidth="1200.0" minHeight="800.0" minWidth="800.0" prefHeight="800.0" prefWidth="1200.0" style="-fx-background-size: cover; -fx-border-insets: 0,2,5,5; -fx-border-width: 10; -fx-border-color: black,yellow, #0FECDC; -fx-background-image: url('https://img.freepik.com/free-photo/yellow-plastic-crosses-toe-ruled-field-playing-tic-tac-toe-blue-background-concept-xo-win-challenge-educational-game-kids_164357-2507.jpg?size=626&amp;ext=jpg');" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller">
+    <children>
+        <GridPane layoutX="197.0" layoutY="261.0" prefHeight="483.0" prefWidth="780.0" style="-fx-border-color: yellow; -fx-background-size: cover,cover; -fx-background-image:  url('https://upload.wikimedia.org/wikipedia/commons/thumb/3/3d/Simple_Rectangle_-_Semi-Transparent.svg/1200px-Simple_Rectangle_-_Semi-Transparent.svg.png'), url('https://png2.cleanpng.com/sh/ba232a291ebf65f40ad304cb4b41edec/L0KzQYm3U8I5N5Jvj5H0aYP2gLBuTglmdJ10j59tZYPuhLF3TgdidJ11eeJucj3zdcXojL1kdJD4fZ9AcD3mf773lgRmel5oh954cj32gL3okBguPZJneqQ7OXOzQoeBhMUvQGcASqU5M0W0RYO5UsE0PWQ3SKIEOT7zfri=/kisspng-yellow-desktop-wallpaper-petal-close-up-computer-color-splash-5abb229c0268d5.8692303515222135320099.png'); -fx-border-insets: yellow; -fx-border-width: 2;">
+<!--        <GridPane layoutX="197.0" layoutY="261.0" prefHeight="483.0" prefWidth="780.0" style="-fx-border-color: yellow; -fx-background-size: cover,cover; -fx-background-image:  url('https://png2.cleanpng.com/sh/ba232a291ebf65f40ad304cb4b41edec/L0KzQYm3U8I5N5Jvj5H0aYP2gLBuTglmdJ10j59tZYPuhLF3TgdidJ11eeJucj3zdcXojL1kdJD4fZ9AcD3mf773lgRmel5oh954cj32gL3okBguPZJneqQ7OXOzQoeBhMUvQGcASqU5M0W0RYO5UsE0PWQ3SKIEOT7zfri=/kisspng-yellow-desktop-wallpaper-petal-close-up-computer-color-splash-5abb229c0268d5.8692303515222135320099.png'), url('https://www.pngkey.com/png/detail/122-1226149_reddle-texture-semi-transparent-white-background.png'); -fx-border-insets: yellow; -fx-border-width: 2;">-->
+            <columnConstraints>
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints />
+                <RowConstraints />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            </rowConstraints>
+            <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.rowIndex="3" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.rowIndex="4" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.rowIndex="2">
+               <children>
+                      <Button fx:id="btn0" alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="50.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn0Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transperant; -fx-border-color: blue;" textAlignment="CENTER">
+                     <font>
+                        <Font name="Berlin Sans FB Demi Bold" size="21.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+                <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn2Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font></Button>
+                <Button fx:id="btn3" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn3Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font></Button>
+                <Button fx:id="btn5" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn5Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font></Button>
+                <Button fx:id="btn6" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn6Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font></Button>
+                <Button fx:id="btn8" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn8Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font></Button>
+            <Button fx:id="btn1" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn1Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font></Button>
+            <Button fx:id="btn4" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn4Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font></Button>
+            <Button fx:id="btn7" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn7Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+               <font>
+                  <Font name="Berlin Sans FB" size="21.0" />
+               </font></Button>
+            </children>
+        </GridPane>
+      <Label layoutX="37.0" layoutY="57.0" text="Game mode: ">
+         <font>
+            <Font name="Berlin Sans FB Demi Bold" size="27.0" />
+         </font>
+      </Label>
+      <Button layoutX="1130.0" layoutY="20.0" maxHeight="31.0" maxWidth="43.0" minWidth="30.0" mnemonicParsing="false" onAction="#close" prefHeight="31.0" prefWidth="43.0" style="-fx-background-color: 'Light blue'; -fx-border-color: Black; -fx-border-width: 2;" text="X" textFill="#0e0ebc">
+         <font>
+            <Font size="13.0" />
+         </font>
+      </Button>
+      <Button layoutX="1065.0" layoutY="20.0" maxHeight="31.0" maxWidth="43.0" minWidth="30.0" mnemonicParsing="false" onAction="#minimize" prefHeight="31.0" prefWidth="43.0" style="-fx-background-color: Light blue; -fx-border-color: Black; -fx-border-width: 2;" text="-" textFill="#0e0ebc" />
+      <AnchorPane prefHeight="200.0" prefWidth="200.0" />
+      <AnchorPane layoutX="218.0" layoutY="43.0" prefHeight="200.0" prefWidth="633.0" style="-fx-background-color: #0fd2ec; -fx-border-insets: 0,5,5; -fx-border-color: blue,#14a0e0; -fx-border-width: 2;">
+         <children>
+            <RadioButton fx:id="rBtnPlayer" layoutX="26.0" layoutY="12.0" mnemonicParsing="false" onAction="#rBtnPlayerClicked" selected="true" style="-fx-mark-highlight-color: blue; -fx-mark-color: blue;" styleClass="red-radio-button" text="1v1 player" textFill="#474727">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="rBtnBot" layoutX="157.0" layoutY="12.0" mnemonicParsing="false" onAction="#rBtnBotClicked" style="-fx-mark-highlight-color: blue; -fx-mark-color: blue;" text="1v bot">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton fx:id="rBtnImpossibleBot" layoutX="264.0" layoutY="12.0" mnemonicParsing="false" onAction="#rBtnImpossibleBotClicked" style="-fx-mark-highlight-color: red; -fx-mark-color: red;" text="1v impossible BOT" textFill="#fc0000">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </RadioButton>
+            <Label fx:id="winnerLabel" layoutX="26.0" layoutY="74.0" text="Winner:  ">
+               <font>
+                  <Font name="Berlin Sans FB" size="48.0" />
+               </font>
+            </Label>
+            <Button fx:id="reset" layoutX="53.0" layoutY="133.0" mnemonicParsing="false" onAction="#reset" prefHeight="53.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-background-image: url('https://clipart-best.com/img/buttons/buttons-clip-art-120.png'); -fx-background-repeat: no-repeat; -fx-background-size: cover;" text="reset" />
+         </children>
+      </AnchorPane>
+    </children>
+</AnchorPane>
