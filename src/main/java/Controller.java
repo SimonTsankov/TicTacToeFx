@@ -1,77 +1,91 @@
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
-import javafx.scene.effect.Bloom;
-import javafx.scene.effect.BoxBlur;
 import javafx.scene.effect.Effect;
 import javafx.scene.effect.Glow;
-import javafx.scene.image.Image;
 import javafx.scene.layout.*;
-import javafx.scene.paint.Color;
-import javafx.scene.text.Font;
-import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
-import javax.imageio.ImageIO;
-import javax.swing.*;
+import javax.swing.text.Style;
 import java.io.IOException;
-import java.net.URL;
 import java.util.Random;
 
 
 public class Controller {
+    String botSymbol = "O";
+    String playerSymbol = "X";
+
+    @FXML
+    AnchorPane anchorPane;
     @FXML
     private Button btn0 = new Button(), btn1 = new Button(), btn2 = new Button(), btn3 = new Button(), btn4 = new Button(), btn5 = new Button(), btn6 = new Button(), btn7 = new Button(), btn8 = new Button(), reset = new Button();
     @FXML
-    private RadioButton rBtnBot, rBtnImpossibleBot, rBtnPlayer;
+    private RadioButton rBtnBot, rBtnImpossibleBot, rBtnPlayer, rGoFirst, rGoSecond;
 
-    boolean playerIsFirst = true;
     int turn = 0;
+
     private Button mapBtn[][];
 
     @FXML
     private Label winnerLabel;
 
-    @FXML
-    void Test(ActionEvent event) {
-
-        System.out.println(checkIfWon());
-    }
-
     Random random = new Random();
 
-    void makeMove(Button btn) {
+    //region Moves
+    private void botImpossibleMakeMove() {
+        char[][] mapChar = new char[3][3];
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (mapBtn[i][j].getText().equals("")) mapChar[i][j] = '_';
+                else {
+                    mapChar[i][j] = mapBtn[i][j].getText().charAt(0);
+                }
+            }
+        }
+        Bot.Move move = Bot.findBestMove(mapChar);
+        mapBtn[move.row][move.col].setText(botSymbol);
+        mapBtn[move.row][move.col].setStyle("-fx-background-color: #006699s");
+        turn++;
+    }
 
-        if (rBtnBot.isSelected()) {
-            if(btn.getText().equals("")) {
-                if (playerIsFirst) {
-                    btn.setText("O");
-                } else btn.setText("X");
-                turn++;
-                if (turn < 8)
-                    botMakeMove();
+    void playerMakeMove(Button btn) {
+        btn.setText(playerSymbol);
+        btn.setStyle("-fx-background-color: #80d4ff");
+        turn++;
+    }
+
+
+    void makeMove(Button btn) {
+        if (rBtnImpossibleBot.isSelected()) {// Its 1vbot impossible
+            if (btn.getText().equals("")) {
+                playerMakeMove(btn);
+                if (hasEmpty())
+                    botImpossibleMakeMove();
             }
         } else {
-            if (btn.getText().equals("")) {
-                if (turn % 2 == 0) {
-                    btn.setText("O");
-                } else {
-                    btn.setText("X");
+            if (rBtnBot.isSelected()) { // Its 1vbot easy
+                if (btn.getText().equals("")) {
+                    playerMakeMove(btn);
+                    if (hasEmpty())
+                        botMakeMove();
                 }
-                turn++;
+            } else {    //Its 1v1 players
+                if (btn.getText().equals("")) {
+                    btn.setText(turn % 2 == 0 ? "X" : "O");
+                    btn.setStyle("-fx-background-color: " + (turn % 2 == 0 ? "#b3ffb3" : "#80d4ff"));
+                    turn++;
+                }
             }
         }
         if (checkIfWon()) {
             reset.setVisible(true);
         }
-        System.out.println(turn);
-        if (turn == 9 && !checkIfWon()) {
+        if (!hasEmpty() && !checkIfWon()) {
             reset.setVisible(true);
             winnerLabel.setText("Draw :C");
         }
-
-
     }
+
 
     private void botMakeMove() {
         boolean placed = false;
@@ -81,25 +95,66 @@ public class Controller {
             int y_pos = random.nextInt(3);
             if (mapBtn[x_pos][y_pos].getText().equals("")) {
                 placed = true;
-                mapBtn[x_pos][y_pos].setText("X");
+                mapBtn[x_pos][y_pos].setText(botSymbol);
+                mapBtn[x_pos][y_pos].setStyle("-fx-background-color: #b3ffb3; ");
             }
         }
 
     }
 
+    //endregion
+    boolean hasEmpty() {
+        for (int i = 0; i < 3; i++) {
+            for (int j = 0; j < 3; j++) {
+                if (mapBtn[i][j].getText().equals("")) return true;
+            }
+        }
+        return false;
+    }
+
+    @FXML
+    void rGoFirstClicked(ActionEvent event) {
+        reset();
+        botSymbol = "O";
+        playerSymbol = "X";
+        Bot.player = 'O';
+        Bot.opponent = 'X';
+    }
+
+    @FXML
+    void rGoSecondClicked(ActionEvent event) {
+        reset();
+        botSymbol = "X";
+        playerSymbol = "O";
+        Bot.player = 'X';
+        Bot.opponent = 'O';
+        if (rBtnImpossibleBot.isSelected()) {
+            botMakeMove();
+        }
+        if (rBtnBot.isSelected())
+            botImpossibleMakeMove();
+    }
+
     @FXML
     void rBtnBotClicked(ActionEvent event) {
         reset();
-    }
+        if(rGoSecond.isSelected())
+            botMakeMove();
+        rGoSecond.setDisable(false);
+        rGoFirst.setDisable(false);}
 
     @FXML
     void rBtnImpossibleBotClicked(ActionEvent event) {
         reset();
-    }
+    if(rGoSecond.isSelected())
+        botImpossibleMakeMove(); rGoSecond.setDisable(false);
+        rGoFirst.setDisable(false); }
 
     @FXML
     void rBtnPlayerClicked(ActionEvent event) {
         reset();
+        rGoSecond.setDisable(true);
+        rGoFirst.setDisable(true);
     }
 
     boolean checkIfWon() {
@@ -110,7 +165,6 @@ public class Controller {
                 temp += mapBtn[i][j].getText();
                 temp2 += mapBtn[j][i].getText();
             }
-
             if (temp.equals("XXX") || temp2.equals("XXX")) {
                 winnerLabel.setText("Winner: X");
                 return true;
@@ -120,6 +174,7 @@ public class Controller {
                 return true;
             }
         }
+
         String X = mapBtn[0][0].getText() + mapBtn[1][1].getText() + mapBtn[2][2].getText();
         String X2 = mapBtn[0][2].getText() + mapBtn[1][1].getText() + mapBtn[2][0].getText();
 
@@ -138,6 +193,11 @@ public class Controller {
     @FXML
     void reset(ActionEvent event) {
         reset();
+        if (rBtnBot.isSelected() && rGoSecond.isSelected()) {
+            botMakeMove();
+        }
+        if (rBtnImpossibleBot.isSelected() && rGoSecond.isSelected())
+            botImpossibleMakeMove();
     }
 
     void reset() {
@@ -146,101 +206,73 @@ public class Controller {
         for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 mapBtn[i][j].setText("");
+
+                mapBtn[i][j].setStyle(defStyle);
             }
         }
         reset.setVisible(false);
     }
 
-    @FXML
-    void btn0Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn0);
-    }
 
     @FXML
-    void btn1Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn1);
+    void btnClicked(ActionEvent event) {
+        Object node = event.getSource();
+        if (!reset.isVisible()) {
+            Button b = (Button) node;
+            makeMove(b);
+        }
     }
 
-    @FXML
-    void btn2Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn2);
+    ToggleGroup groupGmode;
+    ToggleGroup groupFirstSecond;
+    String defStyle;
+    void setUpRadioButtons(){
+        groupFirstSecond = new ToggleGroup();
+
+        rGoFirst.setToggleGroup(groupFirstSecond);
+        rGoSecond.setToggleGroup(groupFirstSecond);
+        rGoSecond.setDisable(true);
+        rGoFirst.setDisable(true);
+
+        groupGmode = new ToggleGroup();
+        rBtnBot.setToggleGroup(groupGmode);
+        rBtnImpossibleBot.setToggleGroup(groupGmode);
+        rBtnPlayer.setToggleGroup(groupGmode);
+        rBtnPlayer.getStyleClass().add("red-radio-button");
     }
-
-    @FXML
-    void btn3Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn3);
-    }
-
-    @FXML
-    void btn4Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn4);
-    }
-
-    @FXML
-    void btn5Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn5);
-    }
-
-    @FXML
-    void btn6Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn6);
-    }
-
-    @FXML
-    void btn7Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn7);
-    }
-
-    @FXML
-    void btn8Clicked(ActionEvent event) {
-        if (!reset.isVisible())
-            makeMove(btn8);
-    }
-
-    ToggleGroup group;
-
     @FXML
     public void initialize() throws IOException {
-        reset.setVisible(false);
-        group = new ToggleGroup();
-        rBtnBot.setToggleGroup(group);
-        rBtnImpossibleBot.setToggleGroup(group);
-        rBtnPlayer.setToggleGroup(group);
-        rBtnPlayer.getStyleClass().add("red-radio-button");
+        setUpRadioButtons();
+        defStyle = btn0.getStyle();//needed for reset of button
+
+
         mapBtn = new Button[][]{
                 {btn0, btn1, btn2},
                 {btn3, btn4, btn5},
                 {btn6, btn7, btn8}
         };
+        reset.setVisible(false);
 
         final Effect glow = new Glow(3.0);
 
-        for (int i = 0; i <3 ; i++) {
+        for (int i = 0; i < 3; i++) {
             for (int j = 0; j < 3; j++) {
                 mapBtn[i][j].setEffect(glow);
             }
         }
 
     }
+
     @FXML
     void close(ActionEvent event) {
         System.exit(0);
     }
 
-    @FXML
-    AnchorPane anchorPane;
+
     @FXML
     void minimize(ActionEvent event) {
-        Stage stage = (Stage)anchorPane.getScene().getWindow();
-        stage = (Stage) ((Button)event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) anchorPane.getScene().getWindow();
+        stage = (Stage) ((Button) event.getSource()).getScene().getWindow();
         stage.setIconified(true);
     }
 }

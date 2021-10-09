@@ -36,42 +36,42 @@
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.columnIndex="2" GridPane.rowIndex="4" />
             <AnchorPane prefHeight="200.0" prefWidth="200.0" style="-fx-border-color: white;" GridPane.rowIndex="2">
                <children>
-                      <Button fx:id="btn0" alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="50.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn0Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transperant; -fx-border-color: blue;" textAlignment="CENTER">
+                      <Button fx:id="btn0" alignment="CENTER" contentDisplay="CENTER" layoutX="100.0" layoutY="50.0" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transperant; -fx-border-color: blue;" textAlignment="CENTER">
                      <font>
                         <Font name="Berlin Sans FB Demi Bold" size="21.0" />
                      </font>
                   </Button>
                </children>
             </AnchorPane>
-                <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn2Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+                <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="21.0" />
                </font></Button>
-                <Button fx:id="btn3" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn3Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                <Button fx:id="btn3" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="21.0" />
                </font></Button>
-                <Button fx:id="btn5" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn5Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+                <Button fx:id="btn5" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="21.0" />
                </font></Button>
-                <Button fx:id="btn6" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn6Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                <Button fx:id="btn6" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="21.0" />
                </font></Button>
-                <Button fx:id="btn8" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn8Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+                <Button fx:id="btn8" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="21.0" />
                </font></Button>
-            <Button fx:id="btn1" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn1Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
+            <Button fx:id="btn1" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="21.0" />
                </font></Button>
-            <Button fx:id="btn4" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn4Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
+            <Button fx:id="btn4" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="21.0" />
                </font></Button>
-            <Button fx:id="btn7" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btn7Clicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
+            <Button fx:id="btn7" alignment="CENTER" contentDisplay="CENTER" minHeight="30.0" minWidth="30.0" mnemonicParsing="false" onAction="#btnClicked" prefHeight="60.0" prefWidth="60.0" style="-fx-background-color: transparent; -fx-border-color: blue;" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" GridPane.valignment="CENTER">
                <font>
                   <Font name="Berlin Sans FB" size="21.0" />
                </font></Button>
@@ -112,6 +112,16 @@
                </font>
             </Label>
             <Button fx:id="reset" layoutX="53.0" layoutY="133.0" mnemonicParsing="false" onAction="#reset" prefHeight="53.0" prefWidth="139.0" style="-fx-background-color: transparent; -fx-background-image: url('https://clipart-best.com/img/buttons/buttons-clip-art-120.png'); -fx-background-repeat: no-repeat; -fx-background-size: cover;" text="reset" />
+            <RadioButton id="rGoSecond" fx:id="rGoSecond" layoutX="520.0" layoutY="154.0" mnemonicParsing="false" onAction="#rGoSecondClicked" style="-fx-mark-highlight-color: blue; -fx-mark-color: blue;" styleClass="red-radio-button" text="go second" textFill="#474727">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </RadioButton>
+            <RadioButton id="rGoFirst" fx:id="rGoFirst" layoutX="520.0" layoutY="120.0" mnemonicParsing="false" onAction="#rGoFirstClicked" selected="true" style="-fx-mark-highlight-color: blue; -fx-mark-color: blue;" styleClass="red-radio-button" text="go first" textFill="#474727">
+               <font>
+                  <Font name="Berlin Sans FB" size="20.0" />
+               </font>
+            </RadioButton>
          </children>
       </AnchorPane>
     </children>
